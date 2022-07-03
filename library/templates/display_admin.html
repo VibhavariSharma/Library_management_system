@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 50%;
+      margin-bottom: 4%;
+    }
+    
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even){background-color: #f2f2f2}
+    
+    th {
+      background-color: #4D4C7D;
+      color: white;
+    }
+    tr:hover {background-color: #E9D5CA;}
+  </style>
+</head>
+
+<body>
+    {% csrf_token %}
+    <table border="1">
+      <tr>
+        <th>Book Name</th>
+        <th>Book Count</th>
+      </tr>
+
+      {% for b in books%}
+      <tr>
+        <td>{{b.sbookname}}</td>
+        <td>{{b.sbookcount}}</td>
+      </tr>
+      {% endfor %}
+
+    </table>
+</body>
+</html>
